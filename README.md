@@ -4,7 +4,7 @@ Welcome to the source code of my personal portfolio website! I built this projec
 
 ## 🚀 Live Demo
 
-*(Link to your live site will go here once deployed, e.g., <https://meer-portfolio.vercel.app>)*
+https://portfolio-meer-mehran-khan.vercel.app/
 
 ## 🛠️ Built With
 
