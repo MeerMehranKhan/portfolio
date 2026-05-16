@@ -50,6 +50,8 @@ const skillCategories = [
       "Streamlit",
       "VS Code",
       "Jupyter Notebook",
+      "Google Colab",
+      "Anaconda",
     ],
   },
   {

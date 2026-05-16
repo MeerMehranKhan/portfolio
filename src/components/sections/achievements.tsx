@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { Award, Lightbulb, Rocket } from "lucide-react";
+import { Award, Lightbulb, Rocket, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/ui/icons";
 
 /* ============================================
@@ -12,9 +12,10 @@ import { GithubIcon } from "@/components/ui/icons";
 const achievements = [
   {
     icon: Award,
-    title: "Generative AI Webinar Certificate",
+    title: "Data Science course completion certificate",
     description:
-      "Completed Outskill's Generative AI Webinar. I took it because I wanted to understand how the latest generative models actually work, not just for the certificate.",
+      "Completed comprehensive Data Science course by CodeWithHarry, building a strong foundation in data analysis and machine learning concepts.",
+    link: "https://drive.google.com/file/d/1ERCz-2B0dqskYIJNot33_gIG5614ZDJE/view?usp=drive_link"
   },
   {
     icon: Rocket,
@@ -69,6 +70,17 @@ export function AchievementsSection() {
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 {achievement.description}
               </p>
+              {achievement.link && (
+                <a
+                  href={achievement.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent/80 transition-colors"
+                >
+                  View Certificate
+                  <ExternalLink size={14} />
+                </a>
+              )}
             </div>
           </motion.div>
         ))}

@@ -69,7 +69,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-4 text-lg sm:text-xl text-muted-foreground font-medium"
             >
-              Data Analyst &amp; Python Developer
+              Data Scientist &amp; Analyst | Python Developer
             </motion.p>
 
             {/* Introduction */}

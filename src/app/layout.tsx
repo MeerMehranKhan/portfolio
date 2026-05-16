@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
    SEO METADATA
    ============================================ */
 export const metadata: Metadata = {
-  title: "Meer Mehran Khan | Aspiring AI Engineer & Data Scientist",
+  title: "Meer Mehran Khan | Data Scientist & Analyst",
   description:
     "Portfolio of Meer Mehran Khan — an aspiring Data Analyst, and Python Developer passionate about building intelligent solutions with data science, machine learning, and emerging technologies.",
   keywords: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meer Mehran Khan | Aspiring AI Engineer & Data Scientist",
+    title: "Meer Mehran Khan | Data Scientist & Analyst",
     description:
       "Portfolio of Meer Mehran Khan — an aspiring AI Engineer, Data Analyst, and Python Developer.",
   },
