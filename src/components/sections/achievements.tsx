@@ -14,7 +14,7 @@ const achievements = [
     icon: Award,
     title: "Certified in Data Science",
     description:
-      "Completed a comprehensive Data Science course by CodeWithHarry, gaining hands-on experience in Python, data analysis, visualization, statistics, and core machine learning concepts.",
+      "Completed a comprehensive Data Science course by CodeWithHarry, gaining hands-on experience in Python, data analysis, and machine learning fundamentals.",
     link: "https://drive.google.com/file/d/1ERCz-2B0dqskYIJNot33_gIG5614ZDJE/view?usp=drive_link"
   },
   {
@@ -63,24 +63,26 @@ export function AchievementsSection() {
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
               <achievement.icon size={22} />
             </div>
-            <div>
-              <h3 className="text-sm font-semibold text-foreground">
-                {achievement.title}
-              </h3>
+            <div className="flex-1">
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="text-sm font-semibold text-foreground">
+                  {achievement.title}
+                </h3>
+                {achievement.link && (
+                  <a
+                    href={achievement.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex shrink-0 items-center gap-1.5 text-xs font-medium text-accent hover:text-accent/80 transition-colors"
+                  >
+                    View Certificate
+                    <ExternalLink size={14} />
+                  </a>
+                )}
+              </div>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 {achievement.description}
               </p>
-              {achievement.link && (
-                <a
-                  href={achievement.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent/80 transition-colors"
-                >
-                  View Certificate
-                  <ExternalLink size={14} />
-                </a>
-              )}
             </div>
           </motion.div>
         ))}
