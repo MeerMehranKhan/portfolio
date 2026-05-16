@@ -12,9 +12,9 @@ import { GithubIcon } from "@/components/ui/icons";
 const achievements = [
   {
     icon: Award,
-    title: "Data Science course completion certificate",
+    title: "Certified in Data Science",
     description:
-      "Completed comprehensive Data Science course by CodeWithHarry, building a strong foundation in data analysis and machine learning concepts.",
+      "Completed a comprehensive Data Science course by CodeWithHarry, gaining hands-on experience in Python, data analysis, visualization, statistics, and core machine learning concepts.",
     link: "https://drive.google.com/file/d/1ERCz-2B0dqskYIJNot33_gIG5614ZDJE/view?usp=drive_link"
   },
   {
