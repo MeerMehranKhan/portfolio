@@ -35,7 +35,7 @@ export function Footer() {
               Meer Mehran Khan
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              Data Analyst · Python Developer
+              Data Scientist &and Analyst · Python Developer
             </p>
           </div>
 
