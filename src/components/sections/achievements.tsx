@@ -33,8 +33,8 @@ const achievements = [
     icon: Award,
     title: "Certified in Python Programming",
     description:
-      "Completed Python Bootcamp by CodeWithHarry, building a strong foundation in Python from scratch including data structures, functions, object-oriented programming, and practical application development.",
-    link: "https://drive.google.com/file/d/1ERCz-2B0dqskYIJNot33_gIG5614ZDJE/view?usp=drive_link"
+      "Completed the Python Bootcamp by CodeWithHarry, covering Python fundamentals, data structures, object-oriented programming, and practical application development.",
+    link: "https://drive.google.com/file/d/1yzDY7iqKq7jrIH4DUQ52wNeuw-9_NO3J/view?usp=drive_link"
   },
 ];
 
