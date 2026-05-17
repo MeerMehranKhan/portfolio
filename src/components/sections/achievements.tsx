@@ -30,10 +30,11 @@ const achievements = [
       "Every project I ship gets a proper README, clean commit history, and working setup instructions. I use my GitHub as proof of what I can build, not just a code dump.",
   },
   {
-    icon: Lightbulb,
-    title: "Self-Taught Beyond the Curriculum",
+    icon: Award,
+    title: "Certified in Python Programming",
     description:
-      "Most of what I know about AI, NLP, and data engineering I picked up on my own through docs, research papers, and building things that break until they don't.",
+      "Completed Python Bootcamp by CodeWithHarry, building a strong foundation in Python from scratch including data structures, functions, object-oriented programming, and practical application development.",
+    link: "https://drive.google.com/file/d/1ERCz-2B0dqskYIJNot33_gIG5614ZDJE/view?usp=drive_link"
   },
 ];
 
