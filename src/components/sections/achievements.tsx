@@ -19,7 +19,7 @@ const achievements = [
   },
   {
     icon: Rocket,
-    title: "5+ End-to-End AI Projects Shipped",
+    title: "6 End-to-End AI Projects Shipped",
     description:
       "Built and deployed multiple production-grade projects from scratch: expense analyzers, resume matchers, news dashboards, startup validators. Each one solves a real problem, not a tutorial exercise.",
   },
