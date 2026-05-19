@@ -29,6 +29,7 @@ const skillCategories = [
       "NumPy",
       "Pandas",
       "Matplotlib",
+      "Seaborn",
       "Scikit-learn",
       "NLP",
       "Data Analysis",
@@ -62,6 +63,9 @@ const skillCategories = [
       "Finance Analytics",
       "Large Language Models",
       "Deep Learning",
+      "Neural Networks",
+      "RAG",
+      "LLMOps",
     ],
   },
   {
