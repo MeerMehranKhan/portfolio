@@ -20,7 +20,7 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code2,
-    skills: ["Python", "SQL", "JavaScript", "HTML", "CSS"],
+    skills: ["Python", "SQL", "JavaScript", "HTML", "CSS", "NoSQL"],
   },
   {
     title: "Data Science & Analytics",
@@ -35,12 +35,13 @@ const skillCategories = [
       "Data Analysis",
       "Data Visualization",
       "Machine Learning",
+      "Exploratory Data Analysis (EDA)",
     ],
   },
   {
     title: "Databases",
     icon: Database,
-    skills: ["MySQL", "MongoDB"],
+    skills: ["MySQL", "MongoDB", "PostgreSQL"],
   },
   {
     title: "Tools & Platforms",
@@ -53,6 +54,9 @@ const skillCategories = [
       "Jupyter Notebook",
       "Google Colab",
       "Anaconda",
+      "Power BI",
+      "Tableau",
+      "Excel",
     ],
   },
   {
@@ -78,6 +82,8 @@ const skillCategories = [
       "Critical Thinking",
       "Curiosity",
       "Team Collaboration",
+      "Analytical Thinking",
+      "Quick Learner",
     ],
   },
 ];
