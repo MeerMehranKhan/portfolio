@@ -65,7 +65,7 @@ export function EducationSection() {
                   <span>Current Semester: 8th</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <BookOpen size={14} />
+                  <GraduationCap size={14} />
                   <span>GPA: 3.61</span>
                 </div>
               </div>
