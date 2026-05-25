@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Meer Mehran Khan | Data Scientist & Analyst",
   description:
-    "Portfolio of Meer Mehran Khan — an aspiring Data Analyst, and Python Developer passionate about building intelligent solutions with data science, machine learning, and emerging technologies.",
+    "Portfolio of Meer Mehran Khan — A Data Scientist & Analyst, and Python Developer passionate about building intelligent solutions with data science, machine learning, and emerging technologies.",
   keywords: [
     "Meer Mehran Khan",
     "AI Engineer",
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Meer Mehran Khan" }],
   openGraph: {
-    title: "Meer Mehran Khan | Aspiring Data Analyst & Python Developer",
+    title: "Meer Mehran Khan | Data Scientist & Analyst",
     description:
-      "Portfolio of Meer Mehran Khan — an aspiring Data Analyst, and Python Developer.",
+      "Portfolio of Meer Mehran Khan — a Data Scientist & Analyst, and Python Developer.",
     type: "website",
     locale: "en_US",
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Meer Mehran Khan | Data Scientist & Analyst",
     description:
-      "Portfolio of Meer Mehran Khan — an aspiring AI Engineer, Data Analyst, and Python Developer.",
+      "Portfolio of Meer Mehran Khan — a Data Scientist & Analyst, and Python Developer.",
   },
 };
 

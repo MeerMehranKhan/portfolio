@@ -107,13 +107,13 @@ export function HeroSection() {
                 View Projects
               </a>
               <a
-                href="/resume.pdf"
+                href="/Meer-Mehran-Khan-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-all duration-300 hover:border-accent hover:text-accent hover:-translate-y-0.5"
               >
                 <FileText size={16} />
-                Download Resume
+                View Resume
               </a>
               <a
                 href="#contact"
