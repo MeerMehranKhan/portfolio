@@ -10,15 +10,7 @@ import { GithubIcon } from "@/components/ui/icons";
    FEATURED PROJECTS DATA
    Sourced from GitHub repositories
    ============================================ */
-const featuredProjects = [
-  {
-    title: "Smart Expense Analyzer",
-    description:
-      "A personal finance dashboard that goes beyond simple tracking. It ingests bank transaction data, auto-categorizes expenses using regex heuristics, detects hidden recurring subscriptions, flags anomalous spending via IQR analysis, and forecasts next-month spending with moving averages. Also supports exportable PDF/CSV/JSON reports and optional LLM-driven financial summaries.",
-    tech: ["Python", "Streamlit", "Pandas", "Plotly", "SQLite", "Scikit-learn"],
-    github: "https://github.com/MeerMehranKhan/smart-expense-analyzer",
-    demo: null,
-  },
+   const featuredProjects = [
   {
     title: "AI Product Research Agent",
     description:
@@ -59,6 +51,14 @@ const featuredProjects = [
     github: "https://github.com/MeerMehranKhan/ai-pricing-intelligence-engine",
     demo: null,
   },
+  {
+    title: "Smart Expense Analyzer",
+    description:
+      "A personal finance dashboard that goes beyond simple tracking. It ingests bank transaction data, auto-categorizes expenses using regex heuristics, detects hidden recurring subscriptions, flags anomalous spending via IQR analysis, and forecasts next-month spending with moving averages. Also supports exportable PDF/CSV/JSON reports and optional LLM-driven financial summaries.",
+    tech: ["Python", "Streamlit", "Pandas", "Plotly", "SQLite", "Scikit-learn"],
+    github: "https://github.com/MeerMehranKhan/smart-expense-analyzer",
+    demo: null,
+  }
 ];
 
 /* ============================================
