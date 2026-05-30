@@ -24,9 +24,9 @@ const jetbrainsMono = JetBrains_Mono({
    SEO METADATA
    ============================================ */
 export const metadata: Metadata = {
-  title: "Meer Mehran Khan | Data Scientist & Analyst",
+  title: "Meer Mehran Khan | Data Analyst",
   description:
-    "Portfolio of Meer Mehran Khan — A Data Scientist & Analyst, and Python Developer passionate about building intelligent solutions with data science, machine learning, and emerging technologies.",
+    "Portfolio of Meer Mehran Khan — A Data Analyst, and Python Developer passionate about building intelligent solutions with data science, machine learning, and emerging technologies.",
   keywords: [
     "Meer Mehran Khan",
     "AI Engineer",
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Meer Mehran Khan" }],
   openGraph: {
-    title: "Meer Mehran Khan | Data Scientist & Analyst",
+    title: "Meer Mehran Khan | Data Analyst",
     description:
-      "Portfolio of Meer Mehran Khan — a Data Scientist & Analyst, and Python Developer.",
+      "Portfolio of Meer Mehran Khan — a Data Analyst, and Python Developer.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meer Mehran Khan | Data Scientist & Analyst",
+    title: "Meer Mehran Khan | Data Analyst",
     description:
-      "Portfolio of Meer Mehran Khan — a Data Scientist & Analyst, and Python Developer.",
+      "Portfolio of Meer Mehran Khan — a DataAnalyst, and Python Developer.",
   },
 };
 
