@@ -12,7 +12,7 @@ const quickFacts = [
   { icon: MapPin, label: "Location", value: "Nawabshah, Sindh, Pakistan" },
   { icon: GraduationCap, label: "Degree", value: "BS Information Technology" },
   { icon: Trophy, label: "Current GPA", value: "3.61" },
-  { icon: Calendar, label: "Graduation", value: "2026" },
+  { icon: Calendar, label: "Expected Graduation", value: "September 2026" },
   { icon: Brain, label: "Focus Areas", value: "AI/ML, Data Science & Analytics, Python" },
   { icon: Briefcase, label: "Status", value: "Open to Opportunities" },
 ];
