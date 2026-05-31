@@ -100,9 +100,9 @@ export function ContactSection() {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
                   <link.icon size={18} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs text-muted-foreground">{link.name}</p>
-                  <p className="text-sm font-medium text-foreground group-hover:text-accent transition-colors">
+                  <p className="text-sm font-medium text-foreground group-hover:text-accent transition-colors break-all">
                     {link.label}
                   </p>
                 </div>

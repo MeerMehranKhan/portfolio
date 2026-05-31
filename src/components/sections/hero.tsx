@@ -36,7 +36,7 @@ export function HeroSection() {
 
       {/* ---- Main Content ---- */}
       <div className="relative z-10 mx-auto max-w-6xl w-full">
-        <div className="flex flex-col-reverse md:flex-row items-center gap-10 md:gap-16">
+        <div className="flex flex-col-reverse items-center md:flex-row gap-10 md:gap-16 w-full">
           {/* Left Column: Text Content */}
           <div className="flex-1 text-center md:text-left">
             {/* Status Badge */}
@@ -175,7 +175,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="flex-shrink-0"
+            className="flex-shrink-0 self-center md:self-auto"
           >
             <div className="group relative">
               {/* Gradient ring behind the image */}

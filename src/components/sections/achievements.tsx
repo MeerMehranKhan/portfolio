@@ -65,7 +65,7 @@ export function AchievementsSection() {
               <achievement.icon size={22} />
             </div>
             <div className="flex-1">
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <h3 className="text-sm font-semibold text-foreground">
                   {achievement.title}
                 </h3>
