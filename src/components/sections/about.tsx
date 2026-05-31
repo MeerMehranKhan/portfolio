@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, GraduationCap, Calendar, Brain, Briefcase, Trophy, Award, Star, Gauge, BadgeCheck, Percent, ChartBar } from "lucide-react";
+import { MapPin, GraduationCap, Calendar, Brain, Briefcase, Trophy } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 
 /* ============================================
