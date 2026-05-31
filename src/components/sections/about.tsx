@@ -42,7 +42,7 @@ export function AboutSection() {
           <p className="text-muted-foreground leading-relaxed">
             Hey, I&apos;m <span className="text-foreground font-semibold">Meer Mehran Khan</span>,
             a final-year Information Technology student at{" "}
-            <span className="text-foreground font-medium">
+            <span className="text-foreground font-medium md:whitespace-nowrap">
               Quaid-e-Awam University of Engineering, Science &amp; Technology
             </span>
             , focused on data analysis, automation, and building tools that solve real problems.
