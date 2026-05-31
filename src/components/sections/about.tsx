@@ -42,7 +42,7 @@ export function AboutSection() {
           <p className="text-muted-foreground leading-relaxed">
             Hey, I&apos;m <span className="text-foreground font-semibold">Meer Mehran Khan</span>,
             a final-year Information Technology student at{" "}
-            <span className="text-foreground font-medium whitespace-nowrap">
+            <span className="text-foreground font-medium">
               Quaid-e-Awam University of Engineering, Science &amp; Technology
             </span>
             , focused on data analysis, automation, and building tools that solve real problems.
@@ -53,7 +53,7 @@ export function AboutSection() {
             I work primarily in <span className="text-accent font-medium">Python</span>,
             using Pandas, SQL, and Streamlit to build end-to-end data pipelines, analytical dashboards,
             and ML-driven applications. My focus on <span className="text-accent font-medium">AI</span> and{" "}
-            <span className="text-accent font-medium whitespace-nowrap">Data Analytics</span> comes from consistently
+            <span className="text-accent font-medium sm:whitespace-nowrap">Data Analytics</span> comes from consistently
             working with real-world data: cleaning it, analyzing it, and turning it into something
             decision-makers can actually use.
           </p>
