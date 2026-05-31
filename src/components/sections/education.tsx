@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { GraduationCap, BookOpen, Calendar, Sparkles } from "lucide-react";
+import { GraduationCap, BookOpen, Calendar, Sparkles, Trophy } from "lucide-react";
 
 /* ============================================
    EDUCATION SECTION
@@ -65,7 +65,7 @@ export function EducationSection() {
                   <span>Current Semester: 8th</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <GraduationCap size={14} />
+                  <Trophy size={14} />
                   <span>Current GPA: 3.61</span>
                 </div>
               </div>

@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, GraduationCap, Calendar, Brain, Briefcase } from "lucide-react";
+import { MapPin, GraduationCap, Calendar, Brain, Briefcase, Trophy, Award, Star, Gauge, BadgeCheck, Percent, ChartBar } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 
 /* ============================================
@@ -11,6 +11,7 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
 const quickFacts = [
   { icon: MapPin, label: "Location", value: "Nawabshah, Sindh, Pakistan" },
   { icon: GraduationCap, label: "Degree", value: "BS Information Technology" },
+  { icon: Trophy, label: "Current GPA", value: "3.61" },
   { icon: Calendar, label: "Graduation", value: "2026" },
   { icon: Brain, label: "Focus Areas", value: "AI/ML, Data Science & Analytics, Python" },
   { icon: Briefcase, label: "Status", value: "Open to Opportunities" },
@@ -30,34 +31,37 @@ export function AboutSection() {
       title="About Me"
       subtitle="Getting to know who I am and what drives me"
     >
-      <div ref={ref} className="grid gap-10 lg:grid-cols-5">
+      <div ref={ref} className="grid gap-10 lg:grid-cols-5 items-stretch">
         {/* About Text */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="lg:col-span-3 space-y-5"
+          className="lg:col-span-3 flex flex-col justify-center space-y-5"
         >
           <p className="text-muted-foreground leading-relaxed">
-            Hey, I&apos;m <span className="text-foreground font-semibold">Meer Mehran Khan</span>.
-            I&apos;m wrapping up my final year of IT at{" "}
-            <span className="text-foreground font-medium">
+            Hey, I&apos;m <span className="text-foreground font-semibold">Meer Mehran Khan</span>,
+            a final-year Information Technology student at{" "}
+            <span className="text-foreground font-medium whitespace-nowrap">
               Quaid-e-Awam University of Engineering, Science &amp; Technology
             </span>
-            . Between classes and side projects, I spend most of my time writing Python and figuring
-            out how to make data do something interesting.
+            , focused on data analysis, automation, and building tools that solve real problems.
+            Most of my work starts with a messy dataset or an inefficient process, and ends with
+            a working solution.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            I spend most of my time building things with <span className="text-accent font-medium">Python</span>.
-            That could be training ML models, writing data pipelines, or putting together full-stack dashboards
-            with Streamlit. I got into <span className="text-accent font-medium">AI</span> and{" "}
-            <span className="text-accent font-medium">Data Science</span> because I like turning messy real-world
-            data into something actually useful. That part of the work never gets old for me.
+            I work primarily in <span className="text-accent font-medium">Python</span>,
+            using Pandas, SQL, and Streamlit to build end-to-end data pipelines, analytical dashboards,
+            and ML-driven applications. My focus on <span className="text-accent font-medium">AI</span> and{" "}
+            <span className="text-accent font-medium whitespace-nowrap">Data Analytics</span> comes from consistently
+            working with real-world data: cleaning it, analyzing it, and turning it into something
+            decision-makers can actually use.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Outside of coursework, I&apos;m usually working on a side project or picking up something new
-            like NLP, finance analytics, or agentic systems. I put everything I build on GitHub because
-            I think shipping real projects says more than any certification.
+            I learn best by building. Every project on my GitHub represents a problem I identified,
+            scoped, and shipped from NLP-based text analysis to finance automation and agentic
+            AI systems. I&apos;m currently seeking internship opportunities where I can apply
+            these skills to real business data and grow as an analyst and developer.
           </p>
         </motion.div>
 
@@ -66,9 +70,9 @@ export function AboutSection() {
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="lg:col-span-2"
+          className="lg:col-span-2 h-full"
         >
-          <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-sm h-full flex flex-col justify-center">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-5">
               Quick Facts
             </h3>
