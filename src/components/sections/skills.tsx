@@ -20,7 +20,7 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code2,
-    skills: ["Python", "SQL", "JavaScript", "HTML", "CSS", "NoSQL"],
+    skills: ["Python", "SQL", "JavaScript", "HTML", "CSS", "NoSQL", "DAX"],
   },
   {
     title: "Data Science & Analytics",
