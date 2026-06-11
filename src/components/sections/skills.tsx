@@ -55,7 +55,6 @@ const skillCategories = [
       "Google Colab",
       "Anaconda",
       "Power BI",
-      "Tableau",
       "Excel",
     ],
   },
