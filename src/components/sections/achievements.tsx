@@ -12,10 +12,10 @@ import { GithubIcon } from "@/components/ui/icons";
 const achievements = [
   {
     icon: Award,
-    title: "Certified in Data Science",
+    title: "Google Advanced Data Analytics Certificate",
     description:
-      "Completed a comprehensive Data Science course by CodeWithHarry, gaining hands-on experience in Python, data analysis, and machine learning fundamentals.",
-    link: "https://drive.google.com/file/d/1ERCz-2B0dqskYIJNot33_gIG5614ZDJE/view?usp=drive_link"
+      "Completed Google's advanced data analytics program covering statistical analysis, regression, machine learning, predictive modeling, and data-driven problem solving through hands-on projects and a capstone.",
+    link: "https://drive.google.com/file/d/1wxTyeKW0o1VaKJOw5GW1_QK1NLJRH7u5/view?usp=drive_link"
   },
   {
     icon: Rocket,
@@ -31,10 +31,10 @@ const achievements = [
   },
   {
     icon: Award,
-    title: "Certified in Python Programming",
+    title: "IBM RAG and Agentic AI Certificate",
     description:
-      "Completed the Python Bootcamp by CodeWithHarry, covering Python fundamentals, data structures, object-oriented programming, and practical application development.",
-    link: "https://drive.google.com/file/d/1yzDY7iqKq7jrIH4DUQ52wNeuw-9_NO3J/view?usp=drive_link"
+      "Completed IBM professional certificate covering Retrieval-Augmented Generation (RAG), vector databases, generative AI, AI agents, LangChain, LangGraph, MCP, and multi-agent architectures, including a hands-on capstone project.",
+    link: "https://drive.google.com/file/d/1kwOqb_5VWM5KrJVSQW25kKpSJgG5Zimq/view?usp=drive_link"
   },
 ];
 
