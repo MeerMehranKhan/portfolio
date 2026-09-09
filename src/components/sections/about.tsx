@@ -9,7 +9,7 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
    QUICK FACTS DATA
    ============================================ */
 const quickFacts = [
-  { icon: MapPin, label: "Location", value: "Nawabshah, Sindh, Pakistan" },
+  { icon: MapPin, label: "Location", value: "Karachi, Sindh, Pakistan" },
   { icon: GraduationCap, label: "Degree", value: "BS Information Technology" },
   { icon: Trophy, label: "CGPA", value: "3.21" },
   { icon: Calendar, label: "Graduated", value: "August 2026" },
