@@ -47,7 +47,7 @@ export function HeroSection() {
             >
               <span className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-xs font-medium text-muted-foreground">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                Open to Internships & Entry-Level Roles
+                Open to Full-Time Opportunities
               </span>
             </motion.div>
 
