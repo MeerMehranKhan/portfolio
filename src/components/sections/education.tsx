@@ -49,7 +49,7 @@ export function EducationSection() {
                     Bachelor of Science in Information Technology
                   </h3>
                   <p className="mt-1 text-sm text-accent font-medium">
-                    Quaid-e-Awam University of Engineering, Science &amp; Technology Nawabshah
+                    Quaid-e-Awam University of Engineering, Science &amp; Technology
                   </p>
                 </div>
               </div>
