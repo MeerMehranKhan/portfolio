@@ -11,10 +11,10 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
 const quickFacts = [
   { icon: MapPin, label: "Location", value: "Nawabshah, Sindh, Pakistan" },
   { icon: GraduationCap, label: "Degree", value: "BS Information Technology" },
-  { icon: Trophy, label: "Current GPA", value: "3.61" },
-  { icon: Calendar, label: "Expected Graduation", value: "September 2026" },
+  { icon: Trophy, label: "CGPA", value: "3.21" },
+  { icon: Calendar, label: "Graduated", value: "August 2026" },
   { icon: Brain, label: "Focus Areas", value: "AI/ML, Data Science & Analytics, Python" },
-  { icon: Briefcase, label: "Status", value: "Open to Opportunities" },
+  { icon: Briefcase, label: "Status", value: "Open to Full-Time Opportunities" },
 ];
 
 /* ============================================
@@ -41,7 +41,7 @@ export function AboutSection() {
         >
           <p className="text-muted-foreground leading-relaxed">
             Hey, I&apos;m <span className="text-foreground font-semibold">Meer Mehran Khan</span>,
-            a final-year Information Technology student at{" "}
+            BS Information Technology graduate from{" "}
             <span className="text-foreground font-medium md:whitespace-nowrap">
               Quaid-e-Awam University of Engineering, Science &amp; Technology
             </span>

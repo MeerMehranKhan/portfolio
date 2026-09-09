@@ -78,7 +78,7 @@ export function ContactSection() {
               Let&apos;s Build Something Together
             </h3>
             <p className="mt-3 text-muted-foreground leading-relaxed">
-              I&apos;m actively looking for internship opportunities and entry-level roles in AI, 
+              I&apos;m actively looking for full-time opportunities in AI, 
               data science, and Python development. Whether you&apos;re a recruiter, a fellow developer, 
               or someone with an interesting project, I&apos;m always open to conversation.
             </p>

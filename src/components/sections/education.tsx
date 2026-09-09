@@ -58,15 +58,15 @@ export function EducationSection() {
               <div className="mt-5 flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar size={14} />
-                  <span>Expected Graduation: September 2026</span>
+                  <span>Graduated: August 2026</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                {/* <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <BookOpen size={14} />
                   <span>Current Semester: 8th</span>
-                </div>
+                </div> */}
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Trophy size={14} />
-                  <span>Current GPA: 3.61</span>
+                  <span>CGPA: 3.21</span>
                 </div>
               </div>
 
