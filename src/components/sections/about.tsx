@@ -60,7 +60,7 @@ export function AboutSection() {
           <p className="text-muted-foreground leading-relaxed">
             I learn best by building. Every project on my GitHub represents a problem I identified,
             scoped, and shipped from NLP-based text analysis to finance automation and agentic
-            AI systems. I&apos;m currently seeking internship opportunities where I can apply
+            AI systems. I&apos;m currently open to full-time opportunities where I can apply
             these skills to real business data and grow as an analyst and developer.
           </p>
         </motion.div>
