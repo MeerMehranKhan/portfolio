@@ -3,8 +3,9 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { MapPin, Calendar, Briefcase, ExternalLink, X } from "lucide-react";
+import { MapPin, Calendar, ExternalLink, X, Award } from "lucide-react";
 import Image from "next/image";
+import { GithubIcon } from "@/components/ui/icons";
 
 /* ============================================
    EXPERIENCE DATA
@@ -119,40 +120,10 @@ export function ExperienceSection() {
             ))}
           </ul>
 
-          {/* Certificate - Central Display */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mb-6"
-          >
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3 text-center">
-              Internship Certificate
-            </p>
-            <div className="flex justify-center">
-              <button
-                onClick={() => setShowCertificate(true)}
-                className="group relative w-full max-w-lg rounded-lg border border-border overflow-hidden bg-white transition-all duration-300 hover:border-accent hover:shadow-lg hover:shadow-accent/10 cursor-pointer"
-                aria-label="View certificate in full size"
-              >
-                <Image
-                  src={experience.certificateImage}
-                  alt="Qwetrum Technologies Internship Certificate"
-                  width={800}
-                  height={566}
-                  className="w-full h-auto object-contain"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
-                  <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-medium text-white bg-black/60 px-3 py-1.5 rounded-full">
-                    Click to enlarge
-                  </span>
-                </div>
-              </button>
-            </div>
-          </motion.div>
 
-          {/* Technology Tags + GitHub Link */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+
+          {/* Technology Tags + Actions */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-2">
             <div className="flex flex-wrap gap-2">
               {experience.technologies.map((tech) => (
                 <span
@@ -163,16 +134,25 @@ export function ExperienceSection() {
                 </span>
               ))}
             </div>
-            <a
-              href={experience.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/5 px-4 py-2 text-sm font-medium text-accent transition-all duration-200 hover:bg-accent/10 hover:border-accent/50 shrink-0"
-            >
-              <Briefcase size={16} />
-              View GitHub Repository
-              <ExternalLink size={14} />
-            </a>
+            <div className="flex flex-wrap items-center gap-3 shrink-0">
+              <button
+                onClick={() => setShowCertificate(true)}
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:bg-accent/10 hover:text-accent hover:border-accent/50"
+              >
+                <Award size={16} />
+                View Certificate
+              </button>
+              <a
+                href={experience.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-lg border border-accent/30 bg-accent/5 px-4 py-2 text-sm font-medium text-accent transition-all duration-200 hover:bg-accent/10 hover:border-accent/50"
+              >
+                <GithubIcon size={16} />
+                Repository
+                <ExternalLink size={14} />
+              </a>
+            </div>
           </div>
         </motion.div>
       </div>

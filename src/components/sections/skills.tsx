@@ -146,20 +146,7 @@ function SkillIconThemed({ name }: { name: string }) {
 
   if (entry.type === "si" && entry.darkColor) {
     const SiIcon = entry.icon;
-    return (
-      <>
-        <SiIcon
-          size={20}
-          className="shrink-0 dark:hidden"
-          style={{ color: entry.color }}
-        />
-        <SiIcon
-          size={20}
-          className="shrink-0 hidden dark:inline-block"
-          style={{ color: entry.darkColor }}
-        />
-      </>
-    );
+    return <SiIcon size={20} className="shrink-0 text-foreground" />;
   }
 
   return <SkillIcon name={name} />;
