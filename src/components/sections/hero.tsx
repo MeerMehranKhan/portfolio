@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, ArrowDown, FileText, MessageSquare } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { ArrowDown, FileText, MessageSquare } from "lucide-react";
+import { GithubIcon, LinkedinIcon, GmailIcon, OutlookIcon } from "@/components/ui/icons";
 import Image from "next/image";
 
 /* ============================================
@@ -152,8 +152,8 @@ export function HeroSection() {
                 },
                 {
                   href: "mailto:imeermehrankhan@gmail.com",
-                  icon: Mail,
-                  label: "Email",
+                  icon: GmailIcon,
+                  label: "Gmail",
                 },
               ].map(({ href, icon: Icon, label }) => (
                 <a

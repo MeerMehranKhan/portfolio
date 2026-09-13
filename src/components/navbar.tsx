@@ -11,11 +11,11 @@ import { useTheme } from "@/components/theme-provider";
    ============================================ */
 const navLinks = [
   { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
-  { href: "#achievements", label: "Achievements" },
-  { href: "#why-me", label: "Why Me" },
+  { href: "#certifications", label: "Certifications" },
   { href: "#contact", label: "Contact" },
 ];
 

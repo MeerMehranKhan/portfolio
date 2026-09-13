@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { Mail, Send } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/ui/icons";
 
 /* ============================================
    CONTACT SECTION
@@ -41,7 +41,7 @@ export function ContactSection() {
   const socialLinks = [
     {
       href: "mailto:imeermehrankhan@gmail.com",
-      icon: Mail,
+      icon: GmailIcon,
       label: "imeermehrankhan@gmail.com",
       name: "Email",
     },

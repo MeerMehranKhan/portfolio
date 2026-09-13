@@ -3,11 +3,11 @@
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/sections/hero";
 import { AboutSection } from "@/components/sections/about";
+import { ExperienceSection } from "@/components/sections/experience";
 import { SkillsSection } from "@/components/sections/skills";
 import { ProjectsSection } from "@/components/sections/projects";
 import { EducationSection } from "@/components/sections/education";
 import { AchievementsSection } from "@/components/sections/achievements";
-import { WhyMeSection } from "@/components/sections/why-me";
 import { ContactSection } from "@/components/sections/contact";
 import { Footer } from "@/components/footer";
 
@@ -23,11 +23,11 @@ export default function Home() {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
         <EducationSection />
         <AchievementsSection />
-        <WhyMeSection />
         <ContactSection />
       </main>
       <Footer />

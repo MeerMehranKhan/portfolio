@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Mail, ArrowUp } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/ui/icons";
 
 /* ============================================
    FOOTER COMPONENT
@@ -54,8 +54,8 @@ export function Footer() {
               },
               {
                 href: "mailto:imeermehrankhan@gmail.com",
-                icon: Mail,
-                label: "Email",
+                icon: GmailIcon,
+                label: "Gmail",
               },
             ].map(({ href, icon: Icon, label }) => (
               <a
