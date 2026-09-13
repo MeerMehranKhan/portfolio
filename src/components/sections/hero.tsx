@@ -151,7 +151,7 @@ export function HeroSection() {
                   label: "LinkedIn",
                 },
                 {
-                  href: "mailto:imeermehrankhan@gmail.com",
+                  href: "https://mail.google.com/mail/?view=cm&fs=1&to=imeermehrankhan@gmail.com",
                   icon: GmailIcon,
                   label: "Gmail",
                 },

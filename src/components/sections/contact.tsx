@@ -79,7 +79,7 @@ export function ContactSection() {
 
   const socialLinks = [
     {
-      href: "mailto:imeermehrankhan@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=imeermehrankhan@gmail.com",
       icon: GmailIcon,
       label: "imeermehrankhan@gmail.com",
       name: "Email",
@@ -134,14 +134,14 @@ export function ContactSection() {
                 initial={{ opacity: 0, x: -20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
-                className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:border-accent hover:-translate-y-0.5 hover:shadow-lg"
+                className="group flex items-center gap-4 rounded-xl border border-border bg-card p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent group-hover:text-accent-foreground">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 transition-transform duration-300 group-hover:scale-110">
                   <link.icon size={18} />
                 </div>
                 <div className="min-w-0">
                   <p className="text-xs text-muted-foreground">{link.name}</p>
-                  <p className="text-sm font-medium text-foreground group-hover:text-accent transition-colors break-all">
+                  <p className="text-sm font-medium text-foreground transition-colors break-all">
                     {link.label}
                   </p>
                 </div>

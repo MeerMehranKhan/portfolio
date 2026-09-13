@@ -41,6 +41,7 @@
   --shadow-color: rgba(0, 0, 0, 0.08);
   --gradient-start: #4f46e5;
   --gradient-end: #7c3aed;
+  --accent-glow: rgba(79, 70, 229, 0.15);
 }
 
 /* ============================================
@@ -64,6 +65,7 @@
   --shadow-color: rgba(0, 0, 0, 0.3);
   --gradient-start: #818cf8;
   --gradient-end: #a78bfa;
+  --accent-glow: rgba(129, 140, 248, 0.15);
 }
 
 /* ============================================
@@ -87,6 +89,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+}
+
+/* Global active scale effect for premium tactile feel */
+a, button {
+  transition: transform 0.15s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+a:active, button:active {
+  transform: scale(0.96) !important;
 }
 
 /* ============================================
@@ -180,12 +191,13 @@ body {
    CARD HOVER EFFECTS
    ============================================ */
 .card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, box-shadow, border-color;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px var(--shadow-color);
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -10px var(--shadow-color), 0 0 24px var(--accent-glow);
   border-color: var(--accent);
 }
 
