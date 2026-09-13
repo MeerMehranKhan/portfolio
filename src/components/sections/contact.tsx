@@ -24,14 +24,24 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    const commonDomains = [
+      "gmail.com", "hotmail.com", "yahoo.com", "outlook.com", 
+      "icloud.com", "aol.com", "protonmail.com", "zoho.com",
+      "live.com", "msn.com"
+    ];
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) return false;
+    
+    const domain = email.toLowerCase().split('@')[1];
+    return commonDomains.includes(domain);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateEmail(formState.email)) {
-      setEmailError("Please enter a valid email address (e.g., name@example.com)");
+      setEmailError("Please enter a valid email address (e.g., name@gmail.com, name@hotmail.com)");
       return;
     }
     
@@ -237,7 +247,6 @@ export function ContactSection() {
                 className="text-center text-sm text-emerald-500 font-medium space-y-1"
               >
                 <p>✓ Message sent successfully!</p>
-                <p className="text-xs text-muted-foreground">(Note: I may need to verify my email for the first message, but it will reach me!)</p>
               </motion.div>
             )}
           </form>
