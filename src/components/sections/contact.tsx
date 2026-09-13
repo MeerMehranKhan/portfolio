@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { Mail, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { GithubIcon, LinkedinIcon, GmailIcon } from "@/components/ui/icons";
 
 /* ============================================
@@ -20,22 +20,51 @@ export function ContactSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (email: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio Contact from ${formState.name}`);
-    const body = encodeURIComponent(`Name: ${formState.name}\nEmail: ${formState.email}\n\n${formState.message}`);
-    const mailtoLink = `mailto:imeermehrankhan@gmail.com?subject=${subject}&body=${body}`;
     
-    // Fallback: Copy email to clipboard in case mailto doesn't work
-    navigator.clipboard.writeText("imeermehrankhan@gmail.com");
+    if (!validateEmail(formState.email)) {
+      setEmailError("Please enter a valid email address (e.g., name@example.com)");
+      return;
+    }
     
-    // Open in new tab (often works better than location.href in React)
-    window.open(mailtoLink, '_blank');
-    
-    setSubmitted(true);
-    setFormState({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 5000);
+    setEmailError("");
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/imeermehrankhan@gmail.com", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: formState.name,
+            email: formState.email,
+            message: formState.message
+        })
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormState({ name: "", email: "", message: "" });
+        setTimeout(() => setSubmitted(false), 8000);
+      } else {
+        alert("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -152,15 +181,21 @@ export function ContactSection() {
               </label>
               <input
                 id="contact-email"
-                type="email"
+                type="text"
                 required
                 value={formState.email}
-                onChange={(e) =>
-                  setFormState((s) => ({ ...s, email: e.target.value }))
-                }
-                className="w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                onChange={(e) => {
+                  setFormState((s) => ({ ...s, email: e.target.value }));
+                  if (emailError) setEmailError("");
+                }}
+                className={`w-full rounded-lg border ${emailError ? 'border-red-500' : 'border-border'} bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors`}
                 placeholder="your@email.com"
               />
+              {emailError && (
+                <p className="mt-1.5 text-xs text-red-500 font-medium">
+                  {emailError}
+                </p>
+              )}
             </div>
 
             {/* Message Field */}
@@ -187,21 +222,23 @@ export function ContactSection() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground shadow-lg shadow-accent/20 transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:brightness-110"
+              disabled={isSubmitting}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground shadow-lg shadow-accent/20 transition-all duration-300 hover:shadow-xl hover:shadow-accent/30 hover:brightness-110 disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              <Send size={16} />
-              Send Message
+              <Send size={16} className={isSubmitting ? "animate-pulse" : ""} />
+              {isSubmitting ? "Sending..." : "Send Message"}
             </button>
 
             {/* Success Message */}
             {submitted && (
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-center text-sm text-emerald-500 font-medium"
+                className="text-center text-sm text-emerald-500 font-medium space-y-1"
               >
-                ✓ Message sent! (Or if it didn&apos;t open your email app, my email address was copied to your clipboard).
-              </motion.p>
+                <p>✓ Message sent successfully!</p>
+                <p className="text-xs text-muted-foreground">(Note: I may need to verify my email for the first message, but it will reach me!)</p>
+              </motion.div>
             )}
           </form>
         </motion.div>

@@ -3,7 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { GraduationCap, BookOpen, Calendar, Sparkles, Trophy } from "lucide-react";
+import { GraduationCap, Calendar, Sparkles, Trophy } from "lucide-react";
 
 /* ============================================
    EDUCATION SECTION
@@ -100,36 +100,6 @@ export function EducationSection() {
             </div>
           </motion.div>
 
-          {/* Self-Learning Card */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative sm:pl-16 mt-6"
-          >
-            {/* Timeline dot */}
-            <div className="absolute left-4 top-6 hidden sm:flex h-5 w-5 items-center justify-center rounded-full border-2 border-accent/50 bg-background z-10">
-              <div className="h-2 w-2 rounded-full bg-accent/50" />
-            </div>
-
-            <div className="rounded-xl border border-border bg-card p-6 shadow-sm card-hover">
-              <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                  <BookOpen size={20} />
-                </div>
-                <div>
-                  <h3 className="text-base font-semibold text-foreground">
-                    Continuous Self-Learning
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                    Actively building projects, learning new frameworks, and exploring AI/ML concepts
-                    beyond the university curriculum. Committed to staying current with industry tools
-                    and best practices through hands-on experimentation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </div>
     </SectionWrapper>
