@@ -63,6 +63,7 @@ const skillIcons: Record<string, SkillIconEntry> = {
   MySQL: { type: "image", src: "/icons/mysql.svg" },
   MongoDB: { type: "image", src: "/icons/mongodb.svg" },
   PostgreSQL: { type: "image", src: "/icons/postgresql.svg" },
+  SQLite: { type: "image", src: "/icons/sqlite.svg" },
 
   // Tools & Platforms
   Git: { type: "si", icon: SiGit, color: "#F05032" },
@@ -181,6 +182,7 @@ const skillCategories = [
       "MySQL",
       "MongoDB",
       "PostgreSQL",
+      "SQLite",
     ],
   },
   {
