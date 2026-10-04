@@ -58,7 +58,7 @@ export function EducationSection() {
               <div className="mt-5 flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Calendar size={14} />
-                  <span>Graduated: August 2026</span>
+                  <span>Graduated: September 2026</span>
                 </div>
                 {/* <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <BookOpen size={14} />

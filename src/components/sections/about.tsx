@@ -12,7 +12,7 @@ const quickFacts = [
   { icon: MapPin, label: "Location", value: "Karachi, Sindh, Pakistan" },
   { icon: GraduationCap, label: "Degree", value: "BS Information Technology" },
   { icon: Trophy, label: "CGPA", value: "3.21" },
-  { icon: Calendar, label: "Graduated", value: "August 2026" },
+  { icon: Calendar, label: "Graduated", value: "September 2026" },
   { icon: Brain, label: "Focus Areas", value: "AI/ML, Data Science & Analytics, Python" },
   { icon: Briefcase, label: "Status", value: "Open to Full-Time Opportunities" },
 ];
