@@ -3,7 +3,7 @@
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { ExternalLink, X, Award } from "lucide-react";
+import { ExternalLink, X } from "lucide-react";
 import Image from "next/image";
 
 /* ============================================
@@ -15,7 +15,14 @@ interface Certification {
   date?: string;
   image: string;
   verificationUrl: string;
+  company: "Google" | "IBM" | "Microsoft";
 }
+
+const companyLogos: Record<"Google" | "IBM" | "Microsoft", string> = {
+  Google: "/icons/google.png",
+  IBM: "/icons/ibm.png",
+  Microsoft: "/icons/microsoft.png",
+};
 
 const certifications: Certification[] = [
   {
@@ -24,6 +31,7 @@ const certifications: Certification[] = [
     image: "/certificates/google-advanced-data-analytics.png",
     verificationUrl:
       "https://coursera.org/verify/professional-cert/GIF98L3Y1UDM",
+    company: "Google",
   },
   {
     title: "IBM RAG and Agentic AI Professional Certificate",
@@ -31,6 +39,7 @@ const certifications: Certification[] = [
     image: "/certificates/ibm-rag-agentic-ai.png",
     verificationUrl:
       "https://coursera.org/verify/professional-cert/R64S7UZOH6GW",
+    company: "IBM",
   },
   {
     title: "Google Business Intelligence Professional Certificate",
@@ -38,6 +47,23 @@ const certifications: Certification[] = [
     image: "/certificates/google-business-intelligence.png",
     verificationUrl:
       "https://coursera.org/verify/professional-cert/SMWO200NIW03",
+    company: "Google",
+  },
+  {
+    title: "Google Data Analytics Professional Certificate",
+    issuer: "Google via Coursera",
+    image: "/certificates/google-data-analytics.png",
+    verificationUrl:
+      "https://coursera.org/verify/professional-cert/4OGPHZJU9NAZ",
+    company: "Google",
+  },
+  {
+    title: "Microsoft Power BI Data Analyst Professional Certificate",
+    issuer: "Microsoft via Coursera",
+    image: "/certificates/microsoft-power-bi-data-analyst.png",
+    verificationUrl:
+      "https://coursera.org/verify/professional-cert/LLW7N1VR339P",
+    company: "Microsoft",
   },
 ];
 
@@ -46,6 +72,101 @@ const certifications: Certification[] = [
    Professional credential cards with
    certificate images and verification links
    ============================================ */
+function CertificationCard({
+  cert,
+  index,
+  isInView,
+  onSelect,
+  className = "",
+}: {
+  cert: Certification;
+  index: number;
+  isInView: boolean;
+  onSelect: (cert: Certification) => void;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className={`card-hover flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden ${className}`}
+    >
+      {/* Certificate Image */}
+      <button
+        onClick={() => onSelect(cert)}
+        className="group relative w-full bg-white overflow-hidden cursor-pointer"
+        aria-label={`View ${cert.title} certificate`}
+      >
+        <div className="aspect-[4/3] relative">
+          <Image
+            src={cert.image}
+            alt={`${cert.title} certificate`}
+            fill
+            className="object-contain p-2"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-medium text-white bg-black/60 px-3 py-1.5 rounded-full">
+            Click to enlarge
+          </span>
+        </div>
+      </button>
+
+      {/* Certificate Info */}
+      <div className="flex flex-col flex-1 p-5">
+        <div className="flex items-start gap-3 mb-3">
+          <div
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border bg-white dark:bg-zinc-900/80 p-1.5 mt-0.5 shadow-2xs"
+            title={cert.company}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src={companyLogos[cert.company]}
+                alt={`${cert.company} logo`}
+                fill
+                className="object-contain"
+                sizes="36px"
+              />
+            </div>
+          </div>
+          <div className="flex-1 min-w-0">
+            <h3 className="text-sm font-semibold text-foreground leading-snug">
+              {cert.title}
+            </h3>
+            <p className="text-xs text-muted-foreground mt-1">
+              {cert.issuer}
+            </p>
+            {cert.date && (
+              <p className="text-xs text-muted-foreground">{cert.date}</p>
+            )}
+          </div>
+        </div>
+
+        {/* Actions */}
+        <div className="mt-auto pt-3 flex flex-wrap gap-2">
+          <button
+            onClick={() => onSelect(cert)}
+            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all duration-200 hover:border-accent hover:text-accent hover:bg-accent/5"
+          >
+            View Certificate
+          </button>
+          <a
+            href={cert.verificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-all duration-200 hover:bg-accent/10 hover:border-accent/50"
+          >
+            Verify Credential
+            <ExternalLink size={12} />
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 export function AchievementsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -83,75 +204,33 @@ export function AchievementsSection() {
       title="Certifications"
       subtitle="Professional credentials and completed programs"
     >
-      <div ref={ref} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {certifications.map((cert, i) => (
-          <motion.div
-            key={cert.title}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="card-hover flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden"
-          >
-            {/* Certificate Image */}
-            <button
-              onClick={() => setSelectedCert(cert)}
-              className="group relative w-full bg-white overflow-hidden cursor-pointer"
-              aria-label={`View ${cert.title} certificate`}
-            >
-              <div className="aspect-[4/3] relative">
-                <Image
-                  src={cert.image}
-                  alt={`${cert.title} certificate`}
-                  fill
-                  className="object-contain p-2"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                />
-              </div>
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-xs font-medium text-white bg-black/60 px-3 py-1.5 rounded-full">
-                  Click to enlarge
-                </span>
-              </div>
-            </button>
+      <div ref={ref} className="space-y-6">
+        {/* Top Row: First 3 certifications */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {certifications.slice(0, 3).map((cert, i) => (
+            <CertificationCard
+              key={cert.title}
+              cert={cert}
+              index={i}
+              isInView={isInView}
+              onSelect={setSelectedCert}
+            />
+          ))}
+        </div>
 
-            {/* Certificate Info */}
-            <div className="flex flex-col flex-1 p-5">
-              <div className="flex items-start gap-3 mb-3">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent mt-0.5">
-                  <Award size={18} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm font-semibold text-foreground leading-snug">
-                    {cert.title}
-                  </h3>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {cert.issuer}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{cert.date}</p>
-                </div>
-              </div>
-
-              {/* Actions */}
-              <div className="mt-auto pt-3 flex flex-wrap gap-2">
-                <button
-                  onClick={() => setSelectedCert(cert)}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-all duration-200 hover:border-accent hover:text-accent hover:bg-accent/5"
-                >
-                  View Certificate
-                </button>
-                <a
-                  href={cert.verificationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/5 px-3 py-1.5 text-xs font-medium text-accent transition-all duration-200 hover:bg-accent/10 hover:border-accent/50"
-                >
-                  Verify Credential
-                  <ExternalLink size={12} />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        ))}
+        {/* Bottom Row: Newly added certifications centered */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {certifications.slice(3).map((cert, i) => (
+            <CertificationCard
+              key={cert.title}
+              cert={cert}
+              index={i + 3}
+              isInView={isInView}
+              onSelect={setSelectedCert}
+              className="w-full sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
+            />
+          ))}
+        </div>
       </div>
 
       {/* Certificate Lightbox Modal */}
