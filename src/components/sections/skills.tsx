@@ -51,13 +51,13 @@ const skillIcons: Record<string, SkillIconEntry> = {
   NumPy: { type: "image", src: "/icons/numpy.svg" },
   Pandas: { type: "image", src: "/icons/pandas.svg" },
   Matplotlib: { type: "image", src: "/icons/matplotlib.svg" },
-  Seaborn: { type: "image", src: "/icons/seaborn.png" },
+  Seaborn: { type: "image", src: "/icons/seaborn.svg" },
   "Scikit-learn": { type: "image", src: "/icons/scikit.svg" },
   NLP: { type: "lucide", icon: Brain },
-  "Data Analysis": { type: "lucide", icon: BarChart3 },
-  "Data Visualization": { type: "lucide", icon: LineChart },
-  "Machine Learning": { type: "lucide", icon: Cpu },
-  "Exploratory Data Analysis (EDA)": { type: "lucide", icon: Search },
+  "Data Analysis": { type: "image", src: "/icons/dataanalysis.svg" },
+  "Data Visualization": { type: "image", src: "/icons/datavisualization.svg" },
+  "Machine Learning": { type: "image", src: "/icons/machinelearning.svg" },
+  "Exploratory Data Analysis (EDA)": { type: "image", src: "/icons/exploratoryanalysis.png" },
 
   // Databases
   MySQL: { type: "image", src: "/icons/mysql.svg" },
@@ -86,7 +86,7 @@ const skillIcons: Record<string, SkillIconEntry> = {
   // AI & Advanced Topics
   "Agentic AI": { type: "lucide", icon: Bot },
   "Large Language Models": { type: "lucide", icon: MessageSquare },
-  "Deep Learning": { type: "lucide", icon: BrainCircuit },
+  "Deep Learning": { type: "image", src: "/icons/deeplearning.svg" },
   "Neural Networks": { type: "lucide", icon: Network },
   RAG: { type: "lucide", icon: Database },
   Regression: { type: "lucide", icon: LineChart },
