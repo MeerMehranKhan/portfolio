@@ -45,7 +45,7 @@ const skillIcons: Record<string, SkillIconEntry> = {
   JavaScript: { type: "image", src: "/icons/javascript.svg" },
   HTML: { type: "image", src: "/icons/html.svg" },
   CSS: { type: "image", src: "/icons/css.svg" },
-  DAX: { type: "lucide", icon: BarChart3 },
+  DAX: { type: "image", src: "/icons/dax.svg" },
 
   // Data Science & AI
   NumPy: { type: "image", src: "/icons/numpy.svg" },
@@ -85,12 +85,10 @@ const skillIcons: Record<string, SkillIconEntry> = {
 
   // AI & Advanced Topics
   "Agentic AI": { type: "lucide", icon: Bot },
-  "Large Language Models": { type: "lucide", icon: MessageSquare },
+  "LLMs": { type: "lucide", icon: MessageSquare },
   "Deep Learning": { type: "image", src: "/icons/deeplearning.svg" },
   "Neural Networks": { type: "lucide", icon: Network },
   RAG: { type: "lucide", icon: Database },
-  Regression: { type: "lucide", icon: LineChart },
-  Classification: { type: "lucide", icon: BrainCircuit },
   "Computer Vision": { type: "lucide", icon: Search },
   "Generative AI": { type: "lucide", icon: BrainCircuit },
 };
@@ -156,10 +154,18 @@ function SkillIconThemed({ name }: { name: string }) {
    SKILLS DATA
    Organized by category with icons
    ============================================ */
-const skillCategories = [
+type SkillCategory = {
+  title: string;
+  skills: string[];
+} & (
+  | { image: string; icon?: never }
+  | { icon: LucideIcon; image?: never }
+);
+
+const skillCategories: SkillCategory[] = [
   {
     title: "Programming & Databases",
-    icon: Code2,
+    image: "/icons/programming.svg",
     skills: [
       "Python",
       "JavaScript",
@@ -173,8 +179,8 @@ const skillCategories = [
     ],
   },
   {
-    title: "Data Science & Analytics",
-    icon: BarChart3,
+    title: "Data Science, Analytics & AI",
+    image: "/icons/data-analytics.svg",
     skills: [
       "NumPy",
       "Pandas",
@@ -184,11 +190,18 @@ const skillCategories = [
       "Data Analysis",
       "Data Visualization",
       "Exploratory Data Analysis (EDA)",
+      "Machine Learning",
+      "Deep Learning",
+      "LLMs",
+      "Generative AI",
+      "RAG",
+      "Agentic AI",
+      "NLP",
     ],
   },
   {
     title: "Tools & Platforms",
-    icon: Wrench,
+    image: "/icons/tools.svg",
     skills: [
       "Git",
       "GitHub",
@@ -201,21 +214,6 @@ const skillCategories = [
       "Anaconda",
       "Power BI",
       "Excel",
-    ],
-  },
-  {
-    title: "Machine Learning & AI",
-    icon: Brain,
-    skills: [
-      "Machine Learning",
-      "Deep Learning",
-      "Large Language Models",
-      "Generative AI",
-      "RAG",
-      "Agentic AI",
-      "NLP",
-      "Regression",
-      "Classification",
     ],
   },
 ];
@@ -235,19 +233,33 @@ export function SkillsSection() {
       title="Skills & Technologies"
       subtitle="The tools, technologies, and competencies I work with"
     >
-      <div ref={ref} className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div ref={ref} className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch">
         {skillCategories.map((category, catIdx) => (
           <motion.div
             key={category.title}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: catIdx * 0.1 }}
-            className="card-hover rounded-xl border border-border bg-card p-5 shadow-sm"
+            className={`card-hover rounded-xl border border-border bg-card p-5 shadow-sm h-full flex flex-col ${
+              catIdx === 2 ? "md:col-span-2 lg:col-span-1" : ""
+            }`}
           >
             {/* Category Header */}
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                <category.icon size={18} />
+            <div className="flex items-center gap-2.5 mb-3 shrink-0">
+              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                {category.image ? (
+                  <div className="relative h-5 w-5">
+                    <Image
+                      src={category.image}
+                      alt={category.title}
+                      fill
+                      className="object-contain"
+                      sizes="20px"
+                    />
+                  </div>
+                ) : category.icon ? (
+                  <category.icon size={18} />
+                ) : null}
               </div>
               <h3 className="text-[15px] font-semibold text-foreground">
                 {category.title}
@@ -255,7 +267,7 @@ export function SkillsSection() {
             </div>
 
             {/* Skill Tags with Branded Icons */}
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5 content-start flex-1">
               {category.skills.map((skill, skillIdx) => (
                 <motion.span
                   key={skill}

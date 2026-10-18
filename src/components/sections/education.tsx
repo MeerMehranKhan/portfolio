@@ -2,8 +2,9 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import Image from "next/image";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { GraduationCap, Calendar, Sparkles, Trophy } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 /* ============================================
    EDUCATION SECTION
@@ -42,7 +43,15 @@ export function EducationSection() {
               {/* Degree Header */}
               <div className="flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                  <GraduationCap size={24} />
+                  <div className="relative h-7 w-7">
+                    <Image
+                      src="/icons/graduation.svg"
+                      alt="Graduation"
+                      fill
+                      className="object-contain"
+                      sizes="28px"
+                    />
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-foreground">
@@ -57,7 +66,15 @@ export function EducationSection() {
               {/* Details */}
               <div className="mt-5 flex flex-wrap gap-4">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Calendar size={14} />
+                  <div className="relative h-4 w-4 shrink-0">
+                    <Image
+                      src="/icons/calendar.svg"
+                      alt="Calendar"
+                      fill
+                      className="object-contain"
+                      sizes="16px"
+                    />
+                  </div>
                   <span>Graduated: September 2026</span>
                 </div>
                 {/* <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -65,7 +82,15 @@ export function EducationSection() {
                   <span>Current Semester: 8th</span>
                 </div> */}
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Trophy size={14} />
+                  <div className="relative h-4 w-4 shrink-0">
+                    <Image
+                      src="/icons/trophy.svg"
+                      alt="Trophy"
+                      fill
+                      className="object-contain"
+                      sizes="16px"
+                    />
+                  </div>
                   <span>CGPA: 3.21</span>
                 </div>
               </div>

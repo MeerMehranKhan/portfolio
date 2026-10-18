@@ -2,19 +2,28 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, GraduationCap, Calendar, Brain, Briefcase, Trophy } from "lucide-react";
+import Image from "next/image";
+import type { LucideIcon } from "lucide-react";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 
 /* ============================================
    QUICK FACTS DATA
    ============================================ */
-const quickFacts = [
-  { icon: MapPin, label: "Location", value: "Karachi, Sindh, Pakistan" },
-  { icon: GraduationCap, label: "Degree", value: "BS Information Technology" },
-  { icon: Trophy, label: "CGPA", value: "3.21" },
-  { icon: Calendar, label: "Graduated", value: "September 2026" },
-  { icon: Brain, label: "Focus Areas", value: "AI/ML, Data Science & Analytics, Business Intelligence" },
-  { icon: Briefcase, label: "Status", value: "Open to Full-Time Opportunities" },
+type QuickFact = {
+  label: string;
+  value: string;
+} & (
+  | { icon: LucideIcon; image?: never }
+  | { image: string; icon?: never }
+);
+
+const quickFacts: QuickFact[] = [
+  { image: "/icons/google-maps.svg", label: "Location", value: "Karachi, Sindh, Pakistan" },
+  { image: "/icons/graduation.svg", label: "Degree", value: "BS Information Technology" },
+  { image: "/icons/trophy.svg", label: "CGPA", value: "3.21" },
+  { image: "/icons/calendar.svg", label: "Graduated", value: "September 2026" },
+  { image: "/icons/brain.svg", label: "Focus Areas", value: "AI/ML, Data Science & Analytics, Business Intelligence" },
+  { image: "/icons/status.svg", label: "Status", value: "Open to Full-Time Opportunities" },
 ];
 
 /* ============================================
@@ -77,20 +86,32 @@ export function AboutSection() {
               Quick Facts
             </h3>
             <div className="space-y-4">
-              {quickFacts.map(({ icon: Icon, label, value }, i) => (
+              {quickFacts.map((fact, i) => (
                 <motion.div
-                  key={label}
+                  key={fact.label}
                   initial={{ opacity: 0, y: 10 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
                   className="flex items-center gap-3"
                 >
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent/10 text-accent">
-                    <Icon size={16} />
+                    {fact.image ? (
+                      <div className="relative h-5 w-5">
+                        <Image
+                          src={fact.image}
+                          alt={fact.label}
+                          fill
+                          className="object-contain"
+                          sizes="20px"
+                        />
+                      </div>
+                    ) : fact.icon ? (
+                      <fact.icon size={16} />
+                    ) : null}
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground">{label}</p>
-                    <p className="text-sm font-medium text-foreground">{value}</p>
+                    <p className="text-xs text-muted-foreground">{fact.label}</p>
+                    <p className="text-sm font-medium text-foreground">{fact.value}</p>
                   </div>
                 </motion.div>
               ))}
