@@ -84,7 +84,7 @@ const skillIcons: Record<string, SkillIconEntry> = {
   Linux: { type: "image", src: "/icons/linux.svg" },
 
   // AI & Advanced Topics
-  "Agentic AI": { type: "lucide", icon: Bot },
+  "Agentic AI": { type: "image", src: "/icons/agentic-ai.svg" },
   "LLMs": { type: "lucide", icon: MessageSquare },
   "Deep Learning": { type: "image", src: "/icons/deeplearning.svg" },
   "Neural Networks": { type: "lucide", icon: Network },
