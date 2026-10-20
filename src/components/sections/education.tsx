@@ -109,9 +109,13 @@ export function EducationSection() {
                     "Artificial Intelligence",
                     "Data Science",
                     "Databases",
-                    "Analytics",
+                    "Data Analytics",
                     "Machine Learning",
+                    "Natural Language Processing",
                     "Finance",
+                    "Business Intelligence",
+                    "Deep Learning",
+                    "Large Language Models",                    
                   ].map((interest) => (
                     <span
                       key={interest}
